@@ -1,0 +1,15 @@
+<!doctype html><html><body>
+<h1>Application</h1>
+<div role="group" aria-labelledby="q">
+  <span id="q">Will you require visa sponsorship?</span>
+  <button type="button" onclick="pick(this)">Yes</button>
+  <button type="button" onclick="pick(this)">No</button>
+</div>
+<label for="fn">First name</label><input id="fn">
+<script>
+function pick(btn) {
+  for (const node of btn.parentElement.querySelectorAll('button')) node.setAttribute('aria-pressed', 'false');
+  btn.setAttribute('aria-pressed', 'true');
+}
+</script>
+</body></html>

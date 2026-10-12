@@ -1,0 +1,68 @@
+<!doctype html><html><head><title>Widget fixture</title></head><body>
+<h1>Application</h1>
+<label for="fn">Legal first name</label><input id="fn">
+<label for="why">Why this role</label><textarea id="why"></textarea>
+<label for="st">Home state</label>
+<select id="st"><option>Select</option><option>MD</option><option>MA</option></select>
+<label id="city-l" for="city">City</label>
+<input id="city" role="combobox" aria-controls="city-list" aria-labelledby="city-l"
+  onfocus="document.getElementById('city-list').hidden=false"
+  onclick="document.getElementById('city-list').hidden=false">
+<ul id="city-list" role="listbox" hidden>
+  <li role="option" onclick="document.getElementById('city').value=this.innerText; this.parentElement.hidden=true">Boston</li>
+  <li role="option" onclick="document.getElementById('city').value=this.innerText; this.parentElement.hidden=true">Chicago</li>
+</ul>
+<fieldset>
+  <legend>Shift</legend>
+  <label><input type="radio" name="shift" value="day"> Day</label>
+  <label><input type="radio" name="shift" value="night"> Night</label>
+</fieldset>
+<div role="radiogroup" aria-label="Desk">
+  <div role="radio" aria-checked="false" tabindex="0" onclick="markRadio(this)">Window</div>
+  <div role="radio" aria-checked="false" tabindex="0" onclick="markRadio(this)">Aisle</div>
+</div>
+<div role="group" aria-labelledby="wk-l">
+  <span id="wk-l">Weekend work</span>
+  <button type="button" onclick="pick(this)">Yes</button>
+  <button type="button" onclick="pick(this)">No</button>
+</div>
+<div class="q">
+  <div class="prompt">Overtime</div>
+  <div class="choices">
+    <button type="button" onclick="pick(this)">Yes</button>
+    <button type="button" onclick="pick(this)">No</button>
+  </div>
+</div>
+<label><input id="news" type="checkbox"> Newsletter</label>
+<div role="checkbox" aria-label="Remote ok" aria-checked="false" tabindex="0"
+  style="width:24px;height:24px;border:1px solid #000"
+  onclick="this.setAttribute('aria-checked', this.getAttribute('aria-checked')==='true'?'false':'true')"></div>
+<fieldset>
+  <legend>Graduation date</legend>
+  <input aria-label="Month" placeholder="MM">
+  <input aria-label="Day" placeholder="DD">
+  <input aria-label="Year" placeholder="YYYY">
+</fieldset>
+<label for="when">Degree date</label><input id="when" type="date">
+<label for="cv">Resume</label><input id="cv" type="file">
+<div class="drop">Drop resume<input id="drop" type="file" aria-label="Resume upload" style="opacity:0.01"></div>
+<div role="combobox" aria-multiselectable="true" aria-labelledby="sk" id="skills">
+  <span id="sk">Skills</span>
+  <ul role="listbox">
+    <li role="option" onclick="this.setAttribute('aria-selected','true')">Python</li>
+    <li role="option" onclick="this.setAttribute('aria-selected','true')">SQL</li>
+  </ul>
+</div>
+<label for="pw">Password</label><input id="pw" type="password" value="hunter2-PASSWORD-xyz">
+<input type="text" aria-label="hidden-looking" style="display:none" value="NOT-VISIBLE-123">
+<script>
+function pick(btn) {
+  for (const node of btn.parentElement.querySelectorAll('button')) node.setAttribute('aria-pressed', 'false');
+  btn.setAttribute('aria-pressed', 'true');
+}
+function markRadio(node) {
+  for (const item of node.parentElement.querySelectorAll('[role=radio]')) item.setAttribute('aria-checked', 'false');
+  node.setAttribute('aria-checked', 'true');
+}
+</script>
+</body></html>

@@ -1,0 +1,13 @@
+<!doctype html><html><body>
+<div id="step">
+  <label for="fn">First name</label><input id="fn">
+  <button type="button" id="next" onclick="nextStep()">Next</button>
+  <button type="submit" onclick="document.body.dataset.submitted='yes'">Submit</button>
+</div>
+<script>
+function nextStep() {
+  document.body.dataset.advanced = 'yes';
+  document.getElementById('step').innerHTML = '<label for="em">Email</label><input id="em"><button type="submit" onclick="document.body.dataset.submitted=\'yes\'">Submit</button>';
+}
+</script>
+</body></html>

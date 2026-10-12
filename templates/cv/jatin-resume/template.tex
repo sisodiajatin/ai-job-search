@@ -1,0 +1,153 @@
+%-------------------------
+% Resume in LaTeX - single-column, one page (article class, letterpaper)
+% Placeholders in [BRACKETS] are filled per application by /apply.
+%-------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.55in}
+\addtolength{\textheight}{1.1in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section spacing
+\titleformat{\section}{
+  \vspace{-6pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+
+\newcommand{\resumeItem}[1]{
+  \item\small{#1 \vspace{-2pt}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeSubheadingSingle}[2]{
+  \vspace{1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.3in, label=\textbullet]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape [YOUR_NAME]} \\ \vspace{3pt}
+    \small
+    [YOUR_LOCATION] $|$
+    \href{tel:[YOUR_PHONE_DIGITS]}{[YOUR_PHONE]} $|$
+    \href{mailto:[YOUR_EMAIL]}{[YOUR_EMAIL]} $|$
+    \href{[YOUR_LINKEDIN_URL]}{LinkedIn} $|$
+    \href{[YOUR_GITHUB_URL]}{GitHub} $|$
+    \href{[YOUR_PORTFOLIO_URL]}{Portfolio}
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+\small{[SUMMARY: 1-2 sentences tailored to the role]}
+
+%-----------EXPERIENCE-----------
+\section{Professional Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheadingSingle
+      {[JOB_TITLE], [COMPANY]}{[START_DATE] - [END_DATE]}
+      \resumeItemListStart
+        \resumeItem{[EXPERIENCE_BULLET_1]}
+        \resumeItem{[EXPERIENCE_BULLET_2]}
+        \resumeItem{[EXPERIENCE_BULLET_3]}
+      \resumeItemListEnd
+
+    % repeat \resumeSubheadingSingle + list for each earlier role
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+
+      \resumeProjectHeading
+          {\textbf{[PROJECT_NAME]} $|$ \href{[PROJECT_URL]}{\underline{GitHub}}}{}
+          \resumeItemListStart
+            \resumeItem{[PROJECT_BULLET_1]}
+            \resumeItem{[PROJECT_BULLET_2]}
+          \resumeItemListEnd
+
+    % repeat \resumeProjectHeading + list for each project
+
+    \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages:} [LANGUAGES_LIST] \\
+     \textbf{Frontend:} [FRONTEND_LIST] \\
+     \textbf{Backend:} [BACKEND_LIST] \\
+     \textbf{Databases:} [DATABASES_LIST] \\
+     \textbf{Cloud \& DevOps:} [CLOUD_LIST]
+    }}
+ \end{itemize}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {[INSTITUTION]}{[INSTITUTION_LOCATION]}
+      {[DEGREE] $|$ GPA: [GPA]}{[EDU_START] - [EDU_END]}
+    % repeat \resumeSubheading for each degree
+  \resumeSubHeadingListEnd
+
+\end{document}
