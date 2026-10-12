@@ -85,8 +85,8 @@ None.
 <!-- Your behavioral assessment results (PI, DISC, Myers-Briggs, or self-assessment) -->
 - **Collaborative** - *[Inferred from LinkedIn About - review before relying on this]* Describes themselves as "open to collaborations and learning from other builders."
 - **Growth-oriented** - *[Inferred from LinkedIn About - review before relying on this]* Actively deepening grounding in systems and data-centric software during grad school; builds independent projects beyond coursework.
-- **Strengths:** [PENDING - not yet defined]
-- **Growth areas:** [PENDING - not yet defined]
+- **Strengths:** *[Self-assessment, 2026-10-12]* Debugging and problem-solving - the person teammates and colleagues bring tricky technical problems to when they're stuck, rather than someone who waits to be assigned a fix.
+- **Growth areas:** *[Self-assessment, 2026-10-12]* Self-advocacy - speaking up about and promoting his own work in a team setting; tends to let the work speak for itself rather than actively surfacing it.
 - **Thrives in:** Small, high-ownership teams (stated startup preference); building and shipping complete products end-to-end
 
 ### What Excites You
