@@ -1,0 +1,17 @@
+{
+  "score_floor": 60,
+  "skip_rules": true,
+  "per_job_budget_usd": 9,
+  "evaluation_budget_usd": 3.0,
+  "per_job_timeout_minutes": 25,
+  "max_consecutive_failures": 3,
+  "model": null,
+  "auto_queue": {
+    "enabled": true, "refresh": true,
+    "per_run_limit": 8,
+    "max_queue_size": 8,
+    "min_fit": "medium",
+    "retry_after_days": 3,
+    "verified_eligibility_only": false
+  }
+}

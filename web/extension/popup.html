@@ -1,0 +1,17 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  body { font: 13px system-ui, sans-serif; width: 340px; margin: 10px; }
+  button { width: 100%; padding: 8px; margin: 4px 0; }
+  input { width: 100%; box-sizing: border-box; margin: 4px 0; }
+  h4 { margin: 10px 0 2px; }
+  ul { margin: 0; padding-left: 18px; }
+  .err { color: #b00020; }
+</style>
+<input id="token" placeholder="Paste token (once)" type="password">
+<button id="save">Save token</button>
+<button id="preview">Preview this page (read-only)</button>
+<select id="draft"></select>
+<button id="fill">Fill this page (never submits)</button>
+<div id="out"></div>
+<script src="popup.js"></script>

@@ -1,0 +1,8 @@
+{
+  "id": "workday",
+  "hosts": ["myworkdayjobs.com", "myworkday.com", "workday.com"],
+  "note": "Selectors checked on a public Workday page. Later screens should be confirmed from a recording before they are added.",
+  "safe_automation_ids": ["applyManually", "bottom-navigation-next-button"],
+  "never_automation_ids": ["autofillWithResume", "useMyLastApplication", "applyWithLinkedIn"],
+  "discover_automation_ids": ["adventureButton"]
+}

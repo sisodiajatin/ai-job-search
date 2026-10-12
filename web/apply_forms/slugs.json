@@ -1,0 +1,5 @@
+{
+  "_comment": "Optional company -> job-board slug overrides, keyed by lowercase company name. Platforms: ashby, greenhouse, lever.",
+  "authentic": {"greenhouse": "authenticinsurance"},
+  "netic": {"ashby": "netic"}
+}

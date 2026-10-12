@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Job Desk Filler (preview)",
+  "version": "0.1.0",
+  "description": "Previews what Job Desk would fill on this page. Read-only: never types, clicks or submits.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:8787/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "fill-page": {
+      "suggested_key": {
+        "default": "Alt+Shift+F"
+      },
+      "description": "Fill this page (never submits)"
+    }
+  }
+}

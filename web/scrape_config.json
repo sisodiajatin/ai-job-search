@@ -1,0 +1,31 @@
+{
+  "jobage": 14,
+  "limit": 20,
+  "queries": [
+    {
+      "query": "software engineer new grad",
+      "linkedin-search": { "location": "United States" },
+      "freehire-search": { "region": "us" }
+    },
+    {
+      "query": "software engineer new grad",
+      "linkedin-search": { "location": "Remote", "remote": "remote" },
+      "freehire-search": { "region": "us", "remote": "remote" }
+    },
+    {
+      "query": "full-stack software engineer",
+      "linkedin-search": { "location": "United States" },
+      "freehire-search": { "region": "us" }
+    },
+    {
+      "query": "software engineer intern",
+      "linkedin-search": { "location": "United States" },
+      "freehire-search": { "region": "us", "seniority": "junior" }
+    },
+    {
+      "query": "software engineer",
+      "linkedin-search": { "location": "San Francisco Bay Area" },
+      "freehire-search": { "region": "us" }
+    }
+  ]
+}
