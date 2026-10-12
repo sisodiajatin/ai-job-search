@@ -151,3 +151,20 @@ export type QueueRunStatus = {
   events: QueueRunEvent[];
   last_id: number;
 };
+
+export type QueueConfig = {
+  score_floor: number;
+  skip_rules: boolean;
+  per_job_budget_usd: number;
+  evaluation_budget_usd: number;
+  per_job_timeout_minutes: number;
+  max_consecutive_failures: number;
+  auto_queue: {
+    enabled: boolean;
+    per_run_limit: number;
+    max_queue_size: number;
+    min_fit: string;
+    retry_after_days: number;
+    verified_eligibility_only: boolean;
+  };
+};

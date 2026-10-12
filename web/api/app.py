@@ -271,6 +271,29 @@ def post_queue_stop(request: Request) -> dict[str, Any]:
     return queue_runner.stop()
 
 
+@app.get("/api/config")
+def get_config() -> dict[str, Any]:
+    return queue_runner.load_config()
+
+
+class ConfigPatchBody(BaseModel):
+    score_floor: float | None = None
+    skip_rules: bool | None = None
+    per_job_budget_usd: float | None = None
+    evaluation_budget_usd: float | None = None
+    per_job_timeout_minutes: int | None = None
+    max_consecutive_failures: int | None = None
+    auto_queue: dict[str, Any] | None = None
+
+
+@app.patch("/api/config")
+def patch_config(body: ConfigPatchBody, request: Request) -> dict[str, Any]:
+    """Edit web/queue_config.json (score floor, eligibility gate, auto-queue caps). Guarded like other write endpoints."""
+    _guard(request)
+    patch = {k: v for k, v in body.model_dump().items() if v is not None}
+    return queue_runner.save_config(patch)
+
+
 @app.get("/api/queue/run")
 def get_queue_run(since: int = 0) -> dict[str, Any]:
     return queue_runner.status(since)

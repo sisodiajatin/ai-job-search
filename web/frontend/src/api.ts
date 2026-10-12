@@ -1,4 +1,4 @@
-import type { ApplicationsPayload, Job, QueueItem, QueueRunStatus, ScrapeEvent, ScrapePlan, TodaySummary, TrackerRow } from "./types";
+import type { ApplicationsPayload, Job, QueueConfig, QueueItem, QueueRunStatus, ScrapeEvent, ScrapePlan, TodaySummary, TrackerRow } from "./types";
 
 async function readError(res: Response): Promise<string> {
   try {
@@ -108,6 +108,22 @@ export async function stopQueueRun(): Promise<QueueRunStatus> {
   const res = await fetch("/api/queue/stop", { method: "POST", headers: { "X-Job-Desk": "1" } });
   if (!res.ok) throw new Error(await readError(res));
   return (await res.json()) as QueueRunStatus;
+}
+
+export async function fetchConfig(): Promise<QueueConfig> {
+  const res = await fetch("/api/config");
+  if (!res.ok) throw new Error(await readError(res));
+  return (await res.json()) as QueueConfig;
+}
+
+export async function saveConfig(patch: Partial<QueueConfig>): Promise<QueueConfig> {
+  const res = await fetch("/api/config", {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json", "X-Job-Desk": "1" },
+    body: JSON.stringify(patch),
+  });
+  if (!res.ok) throw new Error(await readError(res));
+  return (await res.json()) as QueueConfig;
 }
 
 export async function launchApply(key: string): Promise<{ launched: boolean; command: string; queue: QueueItem[] }> {

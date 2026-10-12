@@ -97,6 +97,31 @@ def load_config() -> dict[str, Any]:
     return config
 
 
+EDITABLE_KEYS = {
+    "score_floor", "skip_rules", "per_job_budget_usd", "evaluation_budget_usd",
+    "per_job_timeout_minutes", "max_consecutive_failures",
+}
+AUTO_QUEUE_EDITABLE_KEYS = {
+    "enabled", "per_run_limit", "max_queue_size", "min_fit", "retry_after_days", "verified_eligibility_only",
+}
+
+
+def save_config(patch: dict[str, Any]) -> dict[str, Any]:
+    """Merge `patch` into the on-disk config, keeping only known keys, and return the full config."""
+    config = load_config()
+    for key, value in patch.items():
+        if key in EDITABLE_KEYS:
+            config[key] = value
+        elif key == "auto_queue" and isinstance(value, dict):
+            auto = dict(config.get("auto_queue") or {})
+            for ak, av in value.items():
+                if ak in AUTO_QUEUE_EDITABLE_KEYS:
+                    auto[ak] = av
+            config["auto_queue"] = auto
+    CONFIG_PATH.write_text(json.dumps(config, indent=2) + "\n", encoding="utf-8")
+    return config
+
+
 def _emit(message: str) -> None:
     with _STATE_LOCK:
         event = {"id": _state["next_id"], "ts": datetime.now().strftime("%H:%M:%S"), "message": message}

@@ -1,13 +1,15 @@
 {
   "score_floor": 60,
-  "skip_rules": true,
   "per_job_budget_usd": 9,
   "evaluation_budget_usd": 3.0,
   "per_job_timeout_minutes": 25,
   "max_consecutive_failures": 3,
+  "fill_forms_timeout_minutes": 75,
   "model": null,
+  "skip_rules": true,
   "auto_queue": {
-    "enabled": true, "refresh": true,
+    "enabled": true,
+    "refresh": true,
     "per_run_limit": 8,
     "max_queue_size": 8,
     "min_fit": "medium",

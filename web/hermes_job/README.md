@@ -42,3 +42,28 @@ Read results with `hermes cron runs`. Add `--deliver telegram` (after pairing a 
 
 `--fill-forms` opens Chrome windows, which need your logged-in desktop session; a background scheduler usually cannot show them. Draft overnight, then open the
 dashboard and use **Fill form** (or **Run queue and fill forms**) when you are at the desk, review, and submit yourself.
+
+## Gmail-sync check (a second, separate job)
+
+A second Hermes cron job runs `/gmail-sync` and delivers its proposed-changes table (or "nothing to propose") to you.
+Unlike the drafting job above, this one **is not** `--no-agent` end-to-end in spirit — it reads Gmail and classifies emails with a
+model, but only ever proposes changes; nothing is written to `job_search_tracker.csv` or any `outcome.md` until you reply to
+approve in the delivered chat turn. `gmail_sync_nightly.py` wraps it as a single `claude -p "/gmail-sync"` call so Hermes can still
+run it as a fixed script in `--no-agent` mode (the LLM work happens inside that one `claude -p` call, not inside Hermes' own agent loop).
+
+1. Create the stub, same pattern as the drafting job:
+
+   ```powershell
+   $dir = "$env:LOCALAPPDATA\hermes\scripts"
+   Set-Content "$dir\gmail_sync_nightly.py" 'import runpy; runpy.run_path(r"D:\ai-job-search\web\hermes_job\gmail_sync_nightly.py", run_name="__main__")'
+   ```
+
+2. Create the job, paused, on its own schedule (morning, after the drafting job has had overnight to run):
+
+   ```powershell
+   & "$env:LOCALAPPDATA\hermes\bin\hermes.exe" cron create "0 8 * * *" --no-agent --script gmail_sync_nightly.py --name "Gmail sync check" --deliver local --paused
+   ```
+
+3. Run it once manually (`hermes cron run <job id>`) and read the output in `hermes cron runs` before resuming it unattended -
+   confirm the Gmail connector still works headlessly on this machine and that the proposed-changes format looks right, the same
+   way it was verified interactively before this job existed.

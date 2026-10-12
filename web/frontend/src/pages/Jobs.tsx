@@ -2,6 +2,7 @@ import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import {
   dequeueJob,
   enqueueJob,
+  fetchConfig,
   fetchJobs,
   fetchQueue,
   fetchQueueRun,
@@ -12,10 +13,11 @@ import {
   markApplied,
   patchJobStatus,
   runScrape,
+  saveConfig,
   startQueueRun,
   stopQueueRun,
 } from "../api";
-import type { Job, QueueItem, QueueRunStatus, ScrapeEvent, ScrapePlan } from "../types";
+import type { Job, QueueConfig, QueueItem, QueueRunStatus, ScrapeEvent, ScrapePlan } from "../types";
 import { Empty, Icon, LoadError, PageSkeleton, formatDate } from "../ui";
 import JobDrawer from "./JobDrawer";
 
@@ -37,6 +39,50 @@ function sortJobs(jobs: Job[]): Job[] {
     if (rb !== ra) return rb - ra;
     return String(b.first_seen || "").localeCompare(String(a.first_seen || ""));
   });
+}
+
+function QueueSettings() {
+  const [config, setConfig] = useState<QueueConfig | null>(null);
+  const [saving, setSaving] = useState(false);
+  const [note, setNote] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetchConfig()
+      .then(setConfig)
+      .catch(() => undefined);
+  }, []);
+
+  if (!config) return null;
+
+  async function toggleSkipRules() {
+    setSaving(true);
+    try {
+      const next = await saveConfig({ skip_rules: !config!.skip_rules });
+      setConfig(next);
+      setNote(next.skip_rules ? "Eligibility/score-floor gate is now ON." : "Eligibility/score-floor gate is now OFF — drafts anyway, warns only.");
+    } catch (err) {
+      setNote(err instanceof Error ? err.message : "Could not save.");
+    } finally {
+      setSaving(false);
+    }
+  }
+
+  return (
+    <details className="card card-pad" style={{ marginBottom: "0.9rem" }}>
+      <summary style={{ cursor: "pointer", fontWeight: 600 }}>Queue settings</summary>
+      <p className="note" style={{ marginTop: "0.5rem" }}>
+        Score floor: <strong>{config.score_floor}</strong> · Eligibility/score-floor gate:{" "}
+        <strong>{config.skip_rules ? "ON" : "OFF"}</strong>
+        {config.skip_rules
+          ? " — the queue skips a job that fails the eligibility gate or scores below the floor."
+          : " — the queue drafts ineligible or low-scoring jobs anyway, with a warning. Not recommended for unattended runs."}
+      </p>
+      <button className="btn-quiet" type="button" disabled={saving} onClick={() => void toggleSkipRules()}>
+        <Icon name="check" size={13} /> {config.skip_rules ? "Turn gate OFF" : "Turn gate ON"}
+      </button>
+      {note && <p className="note">{note}</p>}
+    </details>
+  );
 }
 
 export default function Jobs() {
@@ -272,6 +318,8 @@ export default function Jobs() {
           {plan.portals.length > 0 ? plan.portals.join(", ") : "no portals enabled"}
         </p>
       )}
+
+      <QueueSettings />
 
       {flash && <p className="flash">{flash}</p>}
       {error && jobs.length > 0 && <p className="flash error">{error}</p>}

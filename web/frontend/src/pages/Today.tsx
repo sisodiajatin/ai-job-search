@@ -73,6 +73,27 @@ export default function Today() {
         <Stat label="Worth a look" value={picks.length} meta="new, high fit" icon="jobs" />
       </div>
 
+      <section className="card card-pad" style={{ marginBottom: "0.9rem" }}>
+        <div className="card-title">
+          <h2>Check Gmail for updates</h2>
+          <span className="hint">interview invites, assessments, offers, rejections</span>
+        </div>
+        <p className="note" style={{ marginTop: 0 }}>
+          Scans Gmail for status signals on your open applications and proposes tracker updates for you to approve — nothing is
+          written automatically.
+        </p>
+        <button
+          className="btn-quiet"
+          type="button"
+          onClick={async () => {
+            const ok = await copyText("/gmail-sync");
+            setFlash(ok ? "Copied /gmail-sync. Paste it in chat to check for updates." : "Could not copy. Type /gmail-sync in chat.");
+          }}
+        >
+          <Icon name="copy" size={13} /> Check in chat
+        </button>
+      </section>
+
       {nothing && (
         <Empty title="Nothing needs you right now">
           <p>
