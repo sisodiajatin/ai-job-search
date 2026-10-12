@@ -60,9 +60,9 @@ How well do the required/preferred skills align with the candidate's capabilitie
 | 40-59 | Partial match, significant upskilling needed |
 | 0-39 | Fundamental mismatch |
 
-**Strong match areas:** [YOUR_PRIMARY_SKILLS]
-**Moderate match areas:** [YOUR_SECONDARY_SKILLS]
-**Weak match areas:** [SKILLS_YOU_LACK]
+**Strong match areas:** C#, ASP.NET, Python, JavaScript/TypeScript, React, Node.js/Express, REST API design, full-stack web development, SQL database schema design
+**Moderate match areas:** Java, Angular, Vue.js, Flask, FastAPI, Spring Boot, MySQL/MongoDB/Elasticsearch, Docker, Kubernetes, AWS EC2, Azure Functions
+**Weak match areas:** Production ML/model-training work (used LLM APIs, not ML engineering), mobile app development (iOS/Android), large-scale distributed systems at enterprise scale
 
 ### 2. Experience Match (0-100)
 Does work history align with what they're looking for?
@@ -74,9 +74,9 @@ Does work history align with what they're looking for?
 | 40-59 | Adjacent experience, would need to make the case |
 | 0-39 | Unrelated experience |
 
-**Strong:** [YOUR_DIRECT_EXPERIENCE_DOMAINS]
-**Moderate:** [YOUR_ADJACENT_EXPERIENCE]
-**Entry-level:** [ROLES_WITH_LIMITED_EXPERIENCE]
+**Strong:** Full-stack web development (REST APIs, relational database schema design, front-end frameworks) — matches the WebCraft-IT role and three independently shipped, live-deployed projects (Argus, Sentinel, Scholarly Search Engine)
+**Moderate:** Cloud/DevOps exposure (AWS EC2 hosting, Docker/Kubernetes, Vercel serverless) — used in personal projects, not yet in a production ops role
+**Entry-level:** Software Engineer / Software Developer / Full-Stack Developer / Front-End Developer — candidate is a recent MS graduate targeting junior/entry-level roles and internships, not senior positions
 
 ### 3. Behavioral/Culture Fit (0-100)
 Does the role and company culture match the behavioral profile?
@@ -91,9 +91,11 @@ Does the role and company culture match the behavioral profile?
 **Red flags to research:** Department disorganization, work dominated by maintenance over development, poor chemistry with leadership, culture mismatches. Check reviews, media coverage, LinkedIn connections, and network contacts for insider perspective.
 
 ### 4. Location & Logistics (Pass/Fail + Notes)
+**For this candidate: no location constraint.** Open to relocation and remote roles anywhere in the US — relocation is NOT a deal-breaker.
 - Within commute range: PASS
-- Remote with occasional office: PASS
-- Requires relocation: FAIL (deal-breaker)
+- Remote: PASS
+- Requires relocation (anywhere in the US): PASS
+- Requires relocation outside the US: FLAG (discuss with user — work authorization dependent)
 - Frequent international travel: FLAG (discuss with user)
 
 ### 5. Career Alignment & Motivation (0-100)
@@ -107,19 +109,19 @@ Does this role advance career goals and contain tasks that energize?
 | 0-39 | Dead end or backwards step |
 
 **Career goals:**
-- [YOUR_CAREER_GOAL_1]
-- [YOUR_CAREER_GOAL_2]
-- [YOUR_CAREER_GOAL_3]
+- Land a junior/entry-level software engineering role (Software Engineer, Software Developer, Full-Stack Developer, or Front-End Developer) at an early-stage startup, not a large company
+- Open to both internships and full-time offers
+- Build toward greater ownership of full products end-to-end, in a small, high-autonomy team
 
 **Motivation filter:** Evaluate not just whether you *can* do the tasks, but whether the tasks will *energize* you. Consider:
-- Tasks that energize: [YOUR_ENERGIZING_TASKS]
-- Tasks that drain: [YOUR_DRAINING_TASKS]
-- Non-task factors: leadership style, department culture, company values, degree of autonomy
+- Tasks that energize: Building and shipping complete products end-to-end (Argus, Sentinel, and the AI Job Search Automation framework were all deployed/operated live, not just prototyped); small-team/startup environments with direct ownership
+- Tasks that drain: [not yet specified — revisit if it becomes clear from applications/interviews]
+- Non-task factors: startup-style autonomy and pace over large-company process; explicitly prefers startups over big companies
 
 **Life situation alignment:** Consider personal constraints:
-- **Security**: [YOUR_FINANCIAL_SITUATION_CONTEXT]
-- **Flexibility**: [YOUR_SCHEDULE_CONSTRAINTS]
-- **Professional development**: [YOUR_GROWTH_PRIORITIES]
+- **Security**: Recent graduate, actively job-searching; no stated financial constraints
+- **Flexibility**: No location constraints — open to relocation and remote roles anywhere in the US
+- **Professional development**: Targeting junior/entry-level roles to build production experience; open to internships as well as full-time offers
 
 ### 6. Salary Benchmark (Optional)
 

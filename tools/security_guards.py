@@ -49,6 +49,7 @@ REQUIRED_IGNORE_RULES = [
     # a repo-rooted rule silently fails to match it.
     "**/job_scraper/seen_jobs.json",
     "**/job_scraper/notion_sync.json",
+    "**/job_scraper/apply_queue.json",
     "**/job_scraper/*.md",
     "*_BehavioralReport.pdf",
     "linkedin_Profile.pdf",

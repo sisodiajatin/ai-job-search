@@ -25,6 +25,8 @@ salary_data.json
 # A rooted `job_scraper/...` pattern silently fails to match them.
 **/job_scraper/seen_jobs.json
 **/job_scraper/notion_sync.json
+**/job_scraper/apply_queue.json
+**/job_scraper/auto_results/
 **/job_scraper/*.md
 *_BehavioralReport.pdf
 linkedin_Profile.pdf
@@ -95,3 +97,16 @@ upskill/*.md
 
 # Brainstorm mockups (superpowers visual companion) - never ship
 .superpowers/
+
+# Local dashboard (source is tracked; build output is not)
+web/frontend/dist/
+
+# Local job desk: browser profile used by the form filler (logins live here)
+web/.browser-profile/
+
+# Job-form engine: personal profile values, recorded page structure, learned label mappings
+web/apply_forms/profile_fields.json
+web/apply_forms/observed/
+web/apply_forms/memory.json
+
+web/.ext-token

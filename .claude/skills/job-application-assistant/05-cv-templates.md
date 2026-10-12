@@ -4,6 +4,20 @@ framework_version: 1.4.0
 
 # CV Templates and Tailoring Guide
 
+<!-- BEGIN ACTIVE-TEMPLATE (managed by /add-template - do not edit by hand) -->
+> **Active template override: `jatin-resume`**
+>
+> A custom template is active. Where this block conflicts with the stock guidance below, this block wins. Structural advice below (tailoring, page-budget, cutting rules) still applies.
+>
+> - **Template skeleton:** `templates/cv/jatin-resume/template.tex` — use this as the structural reference instead of the stock template
+> - **Manifest:** `templates/cv/jatin-resume/TEMPLATE.md` — read this for style rules and known pitfalls before drafting
+> - **Source extension:** `.tex`
+> - **Compile command:** `cd cv && pdflatex -interaction=nonstopmode <file>.tex` (not the lualatex command named in the stock guidance below — `/apply`'s compile step must use this instead)
+> - **Fonts:** Computer Modern (LaTeX default, system/distribution font, nothing bundled)
+> - **Page limit:** exactly 1 page (this overrides the stock 2-page rule, including the "exactly 2 pages" item in CLAUDE.md's checklist)
+> - **Output file:** `cv/main_<company>_<role>.tex` / `cover_letters/cover_<company>_<role>.tex` (cover letters still use the stock `cover.cls`)
+<!-- END ACTIVE-TEMPLATE -->
+
 <!-- SETUP: Profile statements and section ordering are personalized by running /setup -->
 
 ## Template: LaTeX moderncv (Banking Style)
@@ -116,11 +130,11 @@ When the role sits outside your home domain, **lead with the domain-transfer arg
 **Create 2-3 profile statement templates for your main role types:**
 
 <!-- SETUP: These are populated based on your background -->
-**For [YOUR_PRIMARY_ROLE_TYPE] roles:**
-> [YOUR_PROFILE_STATEMENT_TEMPLATE_1]
+**For Software Engineer / Full-Stack Developer roles:**
+> Recent Computer Science graduate (MS, Worcester Polytechnic Institute) with hands-on full-stack experience building production REST APIs and platforms in C#/ASP.NET, Python, and Node.js, plus three independently shipped full-stack projects spanning AI tooling, real-time data visualization, and search infrastructure. Comfortable across the stack, from SQL Server schema design to React front-ends, with a track record of taking projects from idea to live deployment. Looking to bring that same ownership to an early-stage engineering team.
 
-**For [YOUR_SECONDARY_ROLE_TYPE] roles:**
-> [YOUR_PROFILE_STATEMENT_TEMPLATE_2]
+**For Front-End Developer roles:**
+> Full-stack-trained Computer Science graduate (MS, Worcester Polytechnic Institute) with strong front-end depth in React, TypeScript, and data-visualization libraries (D3.js, Chart.js), demonstrated by a real-time geospatial threat-visualization platform built and deployed solo. Pairs front-end craft with backend fluency (C#/ASP.NET, Node.js, Python), so UI decisions are grounded in a working understanding of the systems behind them.
 
 Statements labeled *[Used for: <company>_<role>]* were extracted from archived application drafts by `/setup` Path A. They are **phrasing references, never fact sources**: when drafting from one, every factual claim still comes from `01-candidate-profile.md` - a past tailored draft does not vouch for its own accuracy.
 

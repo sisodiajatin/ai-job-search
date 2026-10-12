@@ -17,6 +17,8 @@ framework_version: 1.2.0
    - **Never:** Claiming experience the candidate doesn't have; implying they worked in a domain they haven't.
    When a bullet falls in the "flag it" zone, present it to the user after drafting with: "This bullet is a stretch because X. Keep, soften, or drop?" If the evaluation experience match score is below 50, warn before proceeding to drafting that extensive reframing would be needed.
 
+7. **NEVER mention the job-search automation in any application document.** Do not write that the candidate configured or runs a Claude Code pipeline (or any tool) that automates, scrapes, scores or drafts their own job search, and do not use the "AI Job Search Automation" project as evidence or as an "internal tooling" example in a CV or cover letter. Also avoid generic self-description closers such as "I work best in small teams where I can ship across the stack" (user's standing instruction, 2026-10-03). Other Claude Code / agentic-coding work that is not about the job search itself may still be named.
+
 ## Tone
 - **Warm but direct.** Friendly and approachable, but confident without arrogance.
 - **Conversational professional.** Not stiff corporate-speak, not casual chat. Think: how a confident person talks in a good job interview.

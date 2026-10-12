@@ -13,65 +13,61 @@ The `site:` query templates in this file are the **WebSearch fallback** — for 
 ## Search Sites
 
 Primary (your market's job boards - scaffold one with `/add-portal`):
-- **[YOUR_JOB_BOARD]** - your market's largest general job board
-- **linkedin.com/jobs** - LinkedIn job listings (filter: [YOUR_COUNTRY] / [YOUR_CITY]); also covered by `linkedin-search` CLI
-- **[YOUR_INDUSTRY_JOB_BOARD]** - a niche/industry board for your field (optional)
-- **[YOUR_ADDITIONAL_JOB_BOARD]** - another major board for your market (optional)
+- **indeed.com** - largest general US job board
+- **linkedin.com/jobs** - LinkedIn job listings (filter: USA, nationwide); also covered by `linkedin-search` CLI
+- **wellfound.com** - startup-focused job board (matches the stated startup preference; optional to scaffold via `/add-portal`)
+- **freehire.com** - covered by `freehire-search` CLI, no `site:` line needed
 
 Secondary (company career pages via Google):
 - Direct Google searches with `site:` filters for known target companies
 
 ## Query Categories
 
-Queries are grouped by priority. Write **each category in every language from your Languages table** (see Language scope above). Combine each query with your location terms (e.g. your city, region, or metro area) where the site supports it.
+Queries are grouped by priority. Candidate works only in English, so no query translation is needed. Since there is no location constraint (open to relocation and remote, nationwide US), omit city-level filters and instead favor "remote" and broad national searches.
 
-### Priority 1: [YOUR_PRIMARY_ROLE_TYPE]
+### Priority 1: Software Engineer / Full-Stack Developer (entry-level, startups)
 
-These match your strongest and most desired career direction.
-
-```
-site:[YOUR_JOB_BOARD] "[YOUR_PRIMARY_JOB_TITLE]" [YOUR_CITY]
-site:[YOUR_JOB_BOARD] "[YOUR_KEY_SKILL]" [YOUR_CITY]
-site:linkedin.com/jobs "[YOUR_PRIMARY_JOB_TITLE]" [YOUR_COUNTRY]
-```
-
-### Priority 2: [YOUR_DOMAIN_EXPERTISE]
-
-These match your domain expertise.
+These match the primary and most desired career direction.
 
 ```
-site:[YOUR_JOB_BOARD] [YOUR_DOMAIN_KEYWORD_1] [YOUR_CITY] OR [YOUR_REGION]
-site:[YOUR_JOB_BOARD] [YOUR_DOMAIN_KEYWORD_2] [YOUR_COUNTRY]
-site:linkedin.com/jobs [YOUR_DOMAIN_KEYWORD_1] [YOUR_CITY] [YOUR_COUNTRY]
+site:indeed.com "software engineer" entry level startup
+site:indeed.com "full-stack developer" junior OR "new grad"
+site:linkedin.com/jobs "software engineer" "entry level" remote
+site:wellfound.com "software engineer" OR "full-stack developer"
 ```
 
-### Priority 3: [YOUR_ADJACENT_ROLE_TYPE]
-
-Adjacent roles you could pivot into.
+### Priority 2: Front-End Developer (entry-level, startups)
 
 ```
-site:[YOUR_JOB_BOARD] "[YOUR_ADJACENT_TITLE_1]" [YOUR_KEY_SKILL] [YOUR_CITY]
-site:[YOUR_JOB_BOARD] "[YOUR_ADJACENT_TITLE_2]" [YOUR_KEY_SKILL] [YOUR_CITY]
+site:indeed.com "front end developer" junior OR entry level
+site:linkedin.com/jobs "front end developer" React "entry level"
+site:wellfound.com "front end developer" OR "frontend engineer"
 ```
 
-### Priority 4: Broader Technical / Consulting
+### Priority 3: Software Engineering Internships
 
-Wider net for general technical roles.
+Candidate is open to internships as well as full-time roles.
 
 ```
-site:[YOUR_JOB_BOARD] [YOUR_KEY_SKILL] developer [YOUR_CITY]
-site:linkedin.com/jobs "[YOUR_KEY_SKILL] developer" [YOUR_CITY]
-site:[YOUR_JOB_BOARD] "technical consultant" [YOUR_DOMAIN] [YOUR_CITY]
+site:indeed.com "software engineering intern" 2026
+site:linkedin.com/jobs "software engineer intern" startup
+site:wellfound.com internship "software engineer"
+```
+
+### Priority 4: Broader Technical (wider net)
+
+```
+site:indeed.com "junior developer" OR "associate software engineer" startup
+site:linkedin.com/jobs "software developer" "entry level" remote
+site:indeed.com "backend developer" junior startup
 ```
 
 ## Location Filter
 
-When evaluating results, verify the job location is within reasonable commute distance from your home. Define acceptable areas:
-- [YOUR_CITY] and surrounding areas
-- [ACCEPTABLE_AREA_1]
-- [ACCEPTABLE_AREA_2]
-- [BORDERLINE_AREA] (borderline - ~X min by transit)
-- [TOO_FAR_AREA] (too far)
+**No location constraint for this candidate** — open to relocation and remote roles anywhere in the US. When evaluating results, do not filter out postings for commute distance; only flag postings that require relocation *outside* the US (work-authorization dependent — see the Eligibility Gate in `04-job-evaluation.md`).
+- Remote (any US timezone): ideal
+- Any US city/state, on-site or hybrid: acceptable
+- Outside the US: flag — confirm work authorization before proceeding
 
 ## Language Filter
 

@@ -1,10 +1,10 @@
-# Job Application Assistant for [YOUR_NAME]
+# Job Application Assistant for Jatin Sisodia
 
 <!-- SETUP: This file is populated by running /setup -->
 <!-- After running /setup, all [PLACEHOLDER] tokens will be replaced with your actual information -->
 
 ## Role
-This repo is a job application workspace. Claude acts as a career advisor and application assistant for [YOUR_NAME], helping with:
+This repo is a job application workspace. Claude acts as a career advisor and application assistant for Jatin Sisodia, helping with:
 1. **Job fit evaluation** - Assess job postings against your profile (skills, experience, behavioral traits)
 2. **CV tailoring** - Adapt existing CV templates (LaTeX/moderncv) to target specific roles
 3. **Cover letter writing** - Draft targeted cover letters using existing templates (LaTeX)
@@ -16,76 +16,92 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 <!-- This section is auto-populated by /setup. You can also fill it in manually. -->
 
 ### Identity
-- **Name:** [YOUR_NAME]
-- **Location:** [YOUR_CITY], [YOUR_COUNTRY] ([YOUR_COMMUTE_CONSTRAINTS])
+- **Name:** Jatin Sisodia
+- **Location:** Columbia, MD, USA (no commute constraints — open to relocation and remote roles anywhere in the US)
 - **Languages:**
   | Language | Level |
   |----------|-------|
-  | [LANGUAGE] | [LEVEL] |
+  | English | Native |
   <!-- Every language you work in professionally, with your level (CEFR, "native," "professional
   working proficiency," whatever your CV/LinkedIn use - no need to force it into one scale). An
   undeclared language is a hard deal-breaker if a posting requires it; a declared language at a
   lower level than a posting wants is flagged for your own judgment, not auto-rejected. See
   04-job-evaluation.md's Language Gate. -->
-- **CV language:** [YOUR_CV_LANGUAGE] <!-- English unless your market expects otherwise; /setup asks -->
+- **CV language:** English
+- **Earliest start date:** October 10, 2026 (confirmed September 30, 2026).
+- **Relocation:** Willing to relocate, including for Bay Area roles (confirmed September 30, 2026).
+- **OPT expiry:** Current F-1 OPT expires June 7, 2027 (confirmed September 30, 2026). STEM OPT extension approval is not established.
+- **Unpaid internship preference:** Accepts Broadcastwell's unpaid 10-15-hours-per-week internship (confirmed September 30, 2026); work-authorization suitability remains unverified.
 
-- **Status:** [YOUR_EMPLOYMENT_STATUS]
-- **LinkedIn headline:** "[YOUR_LINKEDIN_HEADLINE]"
+- **Status:** Recent graduate (MS Computer Science, WPI, May 2026) - actively seeking internships and full-time entry-level/junior software engineering roles, primarily at startups
+- **Work authorization:** F-1 visa, current OPT (Optional Practical Training), expires June 7, 2027; not a US citizen or permanent resident. The Eligibility Gate in `04-job-evaluation.md` applies: postings requiring citizenship/permanent residency are a hard fail; postings silent on eligibility need the employer's international-applicant page checked before drafting. STEM OPT extension approval is not established.
+- **LinkedIn headline:** "M.S. in Computer Science @Worcester Polytechnic Institute | Seeking 2026 Internship" <!-- may be stale now that the degree is complete — consider updating on LinkedIn and here -->
 
 ### Education
 <!-- List your degrees, most recent first -->
-- **[DEGREE_LEVEL] in [FIELD]** ([YEAR_START]-[YEAR_END]) - [INSTITUTION]
-  - Thesis: "[THESIS_TITLE]"
-  - Topics: [KEY_TOPICS]
+- **MS in Computer Science** (Aug 2024-May 2026) - Worcester Polytechnic Institute, Worcester, MA (GPA 3.5/4.0)
+  - Topics: Systems and data-centric software; projects at the intersection of search, vision, and music
+- **B.Tech in Computer Science** (Aug 2019-May 2023) - Medicaps University, Indore, India (GPA 3.2/4.0)
 
 ### Professional Experience
 <!-- List your roles, most recent first -->
-- **[JOB_TITLE]** ([START_DATE] - [END_DATE]) - **[COMPANY]** ([LOCATION])
-  - [KEY_RESPONSIBILITY_1]
-  - [KEY_RESPONSIBILITY_2]
-  - [KEY_ACHIEVEMENT]
+- **Software Engineer** (Aug 2023 - Jun 2024) - **WebCraft-IT** (Indore, Madhya Pradesh, India)
+  - Developed 10+ modules for a Commodity Trading Platform across the full SDLC using C#, ASP.NET, and PHP, supporting 5,000+ daily transactions
+  - Designed the SQL Server database schema as the core architectural requirement of the system and built CSS/HTML-based report generation across all modules
+  - Created 15+ REST APIs in C#, PHP, and ASP.NET hosted on AWS EC2 to automate data integration across platform modules
+- **Web Developer** (Apr 2023 - Apr 2023) - **Travel Junction Indo**
+  - Launched a WordPress website with custom theme development and payment gateway integration
+  - Implemented mobile responsiveness fixes, page load time improvements, and on-page SEO optimization
+
+### Independent Projects
+<!-- Not part of the stock CLAUDE.md template, but load-bearing for this profile: limited
+professional experience, so these three live-deployed projects are primary evidence. -->
+- **Argus (AI Code Review Assistant):** AI-powered code reviewer across CLI, GitHub webhook, and GitHub Action; FastAPI + React analytics dashboard; published to PyPI. [GitHub linked in CV: sisodiajatin/Argus---Ai-Code-Review-Assistant]
+- **Sentinel (Real-Time DDoS Attack Map):** Real-time threat visualization (React 18, TypeScript, D3.js) with a Vercel serverless backend aggregating live feeds from AbuseIPDB and AlienVault OTX. [GitHub linked in CV: sisodiajatin/Sentinel-DDos-Attack-Map]
+- **Scholarly Search Engine:** Scholarly article search app (Python, Flask, Elasticsearch) with a 50,000+ article indexing pipeline, keyword-weighted ranking, and faceted filters. [GitHub linked in CV: sisodiajatin/CS547-IR-Scholarly-Search]
+- **AI Job Search Automation (Claude Code):** Configured and operate an agentic job-search framework on Claude Code (forked template) - automated scraping, LLM fit-scoring with eligibility/language gates, tailored CV/cover-letter drafting with an AI reviewer critique pass, LaTeX compilation, and ATS verification. [github.com/sisodiajatin/ai-job-search]
 
 ### Technical Skills
-- **Primary:** [YOUR_PRIMARY_SKILLS]
-- **Secondary:** [YOUR_SECONDARY_SKILLS]
-- **Domain:** [YOUR_DOMAIN_EXPERTISE]
-- **Software:** [YOUR_TOOLS_AND_SOFTWARE]
+<!-- CANONICAL INVENTORY. Identical to 01-candidate-profile.md, cv/main_example.tex, and the
+     role-targeted resumes in documents/cv/. /apply's Grounding Audit reads the union of these
+     sources, so they must not drift apart. Change one, change all. -->
+- **Languages:** C#, Java, Python, PHP, JavaScript, TypeScript, SQL, C/C++
+- **Frontend:** React.js, Angular, Vue.js, D3.js, Chart.js, Tailwind CSS, Framer Motion
+- **Backend:** ASP.NET, Node.js, Express.js, Flask, FastAPI, Spring Boot
+- **Databases:** SQL Server, MySQL, MongoDB, SQLite, Elasticsearch
+- **Cloud & DevOps:** Docker, Kubernetes, AWS EC2, Azure Functions, CI/CD, Git
+- **Domain:** Full-stack web development, REST API design, real-time/streaming systems, database schema design
 
 ### Certifications
-<!-- List relevant certifications with dates -->
-- **[CERTIFICATION_NAME]** - [HOURS]h - completed [DATE]
+None listed (older certifications excluded at candidate's request).
 
 ### Publications
-<!-- List peer-reviewed publications, if any -->
-- [AUTHOR_LIST] ([YEAR]). [TITLE]. [JOURNAL].
+None.
 
 ### Awards
-<!-- List relevant awards, hackathons, competitions -->
-- [AWARD_NAME] - [EVENT] ([YEAR])
+None.
 
 ### Behavioral Profile
 <!-- Your behavioral assessment results (PI, DISC, Myers-Briggs, or self-assessment) -->
-- **[TRAIT_1]** - [DESCRIPTION]
-- **[TRAIT_2]** - [DESCRIPTION]
-- **Strengths:** [YOUR_STRENGTHS]
-- **Growth areas:** [YOUR_GROWTH_AREAS]
-- **Thrives in:** [YOUR_IDEAL_ENVIRONMENT]
+- **Collaborative** - *[Inferred from LinkedIn About - review before relying on this]* Describes themselves as "open to collaborations and learning from other builders."
+- **Growth-oriented** - *[Inferred from LinkedIn About - review before relying on this]* Actively deepening grounding in systems and data-centric software during grad school; builds independent projects beyond coursework.
+- **Strengths:** [PENDING - not yet defined]
+- **Growth areas:** [PENDING - not yet defined]
+- **Thrives in:** Small, high-ownership teams (stated startup preference); building and shipping complete products end-to-end
 
 ### What Excites You
 <!-- What motivates you professionally -->
-- [PASSION_1]
-- [PASSION_2]
+- Building and shipping full products end-to-end (Argus, Sentinel, and the AI Job Search Automation framework were all deployed/operated live, not just prototyped)
+- Working in small, high-ownership startup teams rather than large-company process
 
 ### Target Sectors
 <!-- Industries and companies you're targeting -->
-- [SECTOR_1]: [EXAMPLE_COMPANIES]
-- [SECTOR_2]: [EXAMPLE_COMPANIES]
+- Startups (early-stage, not big companies): no specific vertical or named companies yet
 
 ### Deal-breakers
 <!-- Hard constraints on job search. Language requirements are handled separately and
 automatically from your Languages table above - don't duplicate them here. -->
-- [DEALBREAKER_1]
-- [DEALBREAKER_2]
+None specified.
 
 ## Repo Structure
 - `cv/` - LaTeX CV variants (moderncv template, banking style)
@@ -145,3 +161,13 @@ ATS parsers read the PDF's embedded text layer, not the rendered page. Extract i
 - [ ] Email and phone appear as **literal text** in the extraction (icon-glyph noise like `MOBILE-ALT`/`Envelope` is harmless, but a contact detail carried only by an icon or hyperlink is invisible to ATS)
 - [ ] Reading order of the extracted text matches the visual order (single-column stock template is safe; multi-column custom templates are where this breaks)
 - [ ] Posting keywords covered or honestly absent - synonym-only matches tightened to the posting's exact term where truthfully applicable, keywords the profile genuinely supports added to experience bullets, genuine gaps left visible and **never stuffed**
+
+## Agent skills
+
+### Issue tracker
+
+GitHub Issues on this repo (`sisodiajatin/ai-job-search`), via the `gh` CLI. See `docs/agents/issue-tracker.md`.
+
+### Domain docs
+
+Single-context: one `CONTEXT.md` and `docs/adr/` at the repo root. See `docs/agents/domain.md`.

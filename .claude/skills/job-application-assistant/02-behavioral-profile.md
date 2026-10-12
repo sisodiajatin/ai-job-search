@@ -23,6 +23,8 @@ framework_version: 1.0.0
 - **[BEHAVIOR_1]:** [DESCRIPTION]
 - **[BEHAVIOR_2]:** [DESCRIPTION]
 - **[BEHAVIOR_3]:** [DESCRIPTION]
+- **Collaborative:** *[Inferred from LinkedIn About - review before relying on this]* Describes themselves as "open to collaborations and learning from other builders."
+- **Growth-oriented:** *[Inferred from LinkedIn About - review before relying on this]* Actively deepening grounding in systems and data-centric software during grad school; builds independent projects at the intersection of search, vision, and music beyond coursework.
 
 ## How You Work Best
 - [ENVIRONMENT_PREFERENCE_1]

@@ -39,6 +39,48 @@ Keep answers to 1-2 minutes. Be specific. End with what you learned or would do 
 
 <!-- Add more STAR examples as needed. Aim for 4-6 covering different competencies. -->
 
+## STAR Candidates (Complete Manually)
+
+### Commodity Trading Platform database & API architecture
+**Source:** CV/LinkedIn - Software Engineer, WebCraft-IT
+**What happened:** Designed the SQL Server database schema as the core architectural requirement for a Commodity Trading Platform supporting 5,000+ daily transactions, and built 15+ REST APIs (C#, PHP, ASP.NET) on AWS EC2 to automate data integration across 10+ modules.
+**Why it matters:** Questions about system design, database architecture decisions, working across a full SDLC, and eliminating manual/error-prone processes.
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
+
+### Argus - AI Code Review Assistant
+**Source:** CV Projects section
+**What happened:** Built and shipped an AI-powered code reviewer across 3 surfaces (CLI, GitHub webhook, GitHub Action) integrating OpenAI-compatible LLMs, with auto-update re-review logic, commit status checks for merge gating, a FastAPI+React analytics dashboard, and a published PyPI package.
+**Why it matters:** Questions about independent/side projects, LLM integration, end-to-end product ownership, and multi-platform deployment (Docker/Railway/Render).
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
+
+### Sentinel - Real-Time DDoS Attack Map
+**Source:** CV Projects section
+**What happened:** Built a real-time threat visualization platform (React 18, TypeScript, D3.js) with a serverless Node.js backend aggregating live feeds from two threat-intelligence APIs (AbuseIPDB, AlienVault OTX), including offline replay via IndexedDB.
+**Why it matters:** Questions about real-time/streaming systems, working with third-party APIs, frontend data visualization at scale, and serverless architecture choices.
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
+
+### Scholarly Search Engine
+**Source:** CV Projects section
+**What happened:** Built a scholarly article search application (Python, Flask, Elasticsearch) with a scalable indexing pipeline over 50,000+ articles, keyword-weighted ranking, faceted filters, and integration test coverage.
+**Why it matters:** Questions about search/indexing systems at scale, backend architecture, and testing/reliability practices.
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
+
 ## Common Tough Questions
 
 ### "Why did you leave [previous company]?"

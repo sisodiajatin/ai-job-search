@@ -1,8 +1,7 @@
-%% Example CV - [YOUR_NAME]
+%% Example CV - Jatin Sisodia
 %% Comprehensive overview of all competencies, experience, and achievements.
 %% Use as a master reference when tailoring role-specific CVs.
 %%
-%% SETUP: Run /setup to populate this with your actual information.
 %% Compile with: lualatex main_example.tex
 %% (pdflatex often fails on modern MiKTeX with fontawesome5 font-expansion errors.)
 
@@ -17,25 +16,25 @@
 \renewcommand*{\lastnamestyle}[1]{{\fontsize{34}{36}\bfseries\upshape\color{color1}#1}}
 \renewcommand*{\sectionstyle}[1]{{\sectionfont\color{color1}#1}}
 
-\usepackage[utf8]{inputenc}
+\usepackage{needspace}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
     filecolor=magenta,
     urlcolor=blue,
-    pdftitle={[YOUR_NAME] - CV},
+    pdftitle={Jatin Sisodia - CV},
     pdfpagemode=FullScreen,
 }
 \usepackage[scale=0.80]{geometry}
 \usepackage{import}
 
 % personal data
-\name{[First]}{[Last]}
-\address{[Your Address, City, Country]}{}{}
-\phone[mobile]{[+XX XXXXXXXXXX]}
-\email{[your.email@example.com]}
-\extrainfo{\href{[https://linkedin.com/in/your-profile]}{LinkedIn}, \href{[https://github.com/your-username]}{GitHub}}
+\name{Jatin}{Sisodia}
+\address{Columbia, MD, USA}{}{}
+\phone[mobile]{+1 774-701-4370}
+\email{jatinsisodiausa@gmail.com}
+\extrainfo{\href{https://www.linkedin.com/in/jatin-sisodia}{linkedin.com/in/jatin-sisodia} $\cdot$ \href{https://github.com/sisodiajatin}{github.com/sisodiajatin} $\cdot$ \href{https://the-dev-five.vercel.app/}{the-dev-five.vercel.app}}
 
 \begin{document}
 
@@ -46,7 +45,7 @@
 % ============================================================
 
 \vspace{6pt}
-\small{[Write a 3-5 line profile statement tailored to the role you're applying for. Focus on what makes you uniquely qualified. Example: "Data scientist with a PhD in [field] and X years of industry experience. Combines deep domain expertise in [domain] with strong applied machine learning and Python development skills. Experienced in developing end-to-end ML pipelines, from data ingestion to stakeholder-facing dashboards."]}
+\small{Recent Computer Science graduate (MS, Worcester Polytechnic Institute) with hands-on full-stack experience building production REST APIs and platforms in C\#/ASP.NET, Python, and Node.js, plus three independently shipped full-stack projects spanning AI tooling, real-time data visualization, and search infrastructure. Comfortable across the stack, from SQL Server schema design to React front-ends, with a track record of taking projects from idea to live deployment.}
 
 % ============================================================
 %     CORE COMPETENCIES
@@ -56,15 +55,15 @@
 \vspace{1pt}
 \begin{itemize}
 
-\item \textbf{[Skill Category 1]}: [Specific skills, frameworks, tools. Be concrete.]
+\item \textbf{Languages}: C\#, Java, Python, PHP, JavaScript, TypeScript, SQL, C/C++
 
-\item \textbf{[Skill Category 2]}: [Specific skills, frameworks, tools.]
+\item \textbf{Frontend}: React.js, Angular, Vue.js, D3.js, Chart.js, Tailwind CSS, Framer Motion
 
-\item \textbf{[Skill Category 3]}: [Specific skills, frameworks, tools.]
+\item \textbf{Backend}: ASP.NET, Node.js, Express.js, Flask, FastAPI, Spring Boot
 
-\item \textbf{[Skill Category 4]}: [Domain expertise, methods, approaches.]
+\item \textbf{Databases}: SQL Server, MySQL, MongoDB, SQLite, Elasticsearch
 
-\item \textbf{[Skill Category 5]}: [Tools, platforms, software.]
+\item \textbf{Cloud \& DevOps}: Docker, Kubernetes, AWS EC2, Azure Functions, CI/CD, Git
 
 \end{itemize}
 
@@ -77,32 +76,60 @@
 \begin{itemize}
 
 % --- Most Recent Role ---
-\item{\cventry{[YYYY-Present]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
+\needspace{5\baselineskip}
+\item{\cventry{Aug 2023 - Jun 2024}{Software Engineer}{WebCraft-IT}{Indore, India}{}{\vspace{1pt}
 \begin{itemize}
-    \item [Achievement or responsibility 1 - be specific, use numbers where possible]
-    \item [Achievement or responsibility 2]
-    \item [Achievement or responsibility 3]
-    \item [Achievement or responsibility 4]
+    \item Developed 10+ modules for a Commodity Trading Platform across the full SDLC using C\#, ASP.NET, and PHP, supporting 5,000+ daily transactions
+    \item Designed the SQL Server database schema as the core architectural requirement of the system and built CSS/HTML-based report generation to surface transaction data across all modules
+    \item Created 15+ REST APIs in C\#, PHP, and ASP.NET hosted on AWS EC2 to automate data integration across platform modules, eliminating manual entry errors and streamlining end-to-end data flow
 \end{itemize}}}
 
 \vspace{3pt}
 
 % --- Previous Role ---
-\item{\cventry{[YYYY-YYYY]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
+\needspace{5\baselineskip}
+\item{\cventry{Apr 2023 - Apr 2023}{Web Developer}{Travel Junction Indo}{}{}{\vspace{1pt}
 \begin{itemize}
-    \item [Achievement or responsibility 1]
-    \item [Achievement or responsibility 2]
-    \item [Achievement or responsibility 3]
+    \item Launched a WordPress website with custom theme development and payment gateway integration, digitizing the booking workflow and reducing manual coordination for the client
+    \item Implemented mobile responsiveness fixes and page load time improvements alongside on-page SEO optimization to improve search visibility and user experience
 \end{itemize}}}
+
+\end{itemize}
+
+% ============================================================
+%     PROJECTS
+% ============================================================
+
+\section{Projects}
+\vspace{1pt}
+\begin{itemize}
+
+\needspace{6\baselineskip}
+\item \textbf{Argus -- AI Code Review Assistant} $\vert$ \href{https://github.com/sisodiajatin/Argus---Ai-Code-Review-Assistant}{GitHub}
+\begin{itemize}
+    \item Built an AI-powered code reviewer deployed across 3 surfaces (CLI tool, GitHub webhook, GitHub Action), integrating OpenAI-compatible LLMs (e.g., Groq) to analyze PR diffs and post inline review comments automatically
+    \item Introduced auto-update logic that re-triggers LLM analysis on every re-push and sets GitHub commit status checks for merge gating, enforcing code quality without manual reviewer intervention
+    \item Shipped a FastAPI + React dashboard with PR analytics and re-review controls, one-command deployment across 3 platforms (Docker/Railway/Render), and published the package to PyPI
+\end{itemize}
 
 \vspace{3pt}
 
-% --- Earlier Role ---
-\item{\cventry{[YYYY-YYYY]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
+\needspace{6\baselineskip}
+\item \textbf{Sentinel -- Real-Time DDoS Attack Map} $\vert$ \href{https://github.com/sisodiajatin/Sentinel-DDos-Attack-Map}{GitHub}
 \begin{itemize}
-    \item [Achievement or responsibility 1]
-    \item [Achievement or responsibility 2]
-\end{itemize}}}
+    \item Pioneered a real-time DDoS threat visualization platform using React 18, TypeScript, and D3.js with 3D/2D geospatial attack maps, rendering live attack events streamed from the backend
+    \item Engineered a Vercel serverless Node.js backend to aggregate and serve real-time threat feeds from 2 intelligence sources (AbuseIPDB and AlienVault OTX), enabling low-latency live event delivery to the frontend
+    \item Visualized attack events with D3.js and Recharts across time-series trends, geographic hotspot analysis, and threat scoring, plus IndexedDB for offline attack replay
+\end{itemize}
+
+\vspace{3pt}
+
+\needspace{5\baselineskip}
+\item \textbf{Scholarly Search Engine} $\vert$ \href{https://github.com/sisodiajatin/CS547-IR-Scholarly-Search}{GitHub}
+\begin{itemize}
+    \item Established a scholarly article search app using Python, Flask, and Elasticsearch with a scalable indexing pipeline over 50,000+ articles, keyword-weighted ranking, and faceted filters
+    \item Unified user authentication, input validation, structured query logging, and integration test coverage to ensure accurate, secure, and repeatable production deployments
+\end{itemize}
 
 \end{itemize}
 
@@ -114,14 +141,14 @@
 \vspace{1pt}
 \begin{itemize}
 
-\item{\cventry{[YYYY-YYYY]}{[Degree] in [Field]}{[Institution]}{[City, Country]}{}{\vspace{1pt}
-Thesis: ``[Thesis Title].'' [Brief description of research focus.]
+\item{\cventry{Aug 2024 - May 2026}{MS in Computer Science}{Worcester Polytechnic Institute}{Worcester, MA}{}{\vspace{1pt}
+GPA: 3.5/4.0. Topics: systems and data-centric software; projects at the intersection of search, vision, and music.
 }}
 
 \vspace{3pt}
 
-\item{\cventry{[YYYY-YYYY]}{[Degree] in [Field]}{[Institution]}{[City, Country]}{}{\vspace{1pt}
-[Brief description or key topics.]
+\item{\cventry{Aug 2019 - May 2023}{B.Tech in Computer Science}{Medicaps University}{Indore, India}{}{\vspace{1pt}
+GPA: 3.2/4.0.
 }}
 
 \end{itemize}
@@ -133,27 +160,7 @@ Thesis: ``[Thesis Title].'' [Brief description of research focus.]
 \section{Languages}
 \vspace{1pt}
 \begin{itemize}
-\item [Language 1] (native), [Language 2] (fluent), [Language 3] (intermediate).
-\end{itemize}
-
-% ============================================================
-%     PUBLICATIONS (optional)
-% ============================================================
-
-\section{Publications}
-\vspace{1pt}
-\begin{itemize}
-\item [Author(s)] ([Year]). [Title]. [Journal/Conference]. \href{[DOI_URL]}{DOI link}
-\end{itemize}
-
-% ============================================================
-%     HONORS AND AWARDS (optional)
-% ============================================================
-
-\section{Honors and Awards}
-\vspace{1pt}
-\begin{itemize}
-\item{\textbf{[Award Name]} -- [Event/Organization] ([Year]).}
+\item English (native).
 \end{itemize}
 
 % ============================================================
